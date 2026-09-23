@@ -5,7 +5,20 @@
 ## 🎯 What it does
 Ask any business question in plain English and get an AI-powered answer with business recommendations — sourced directly from your company documents.
 
-## 🏗️ Architecture# multi-agent-rag-system
+## 🏗️ Architecture
+
+User Question
+↓
+Agent 1 — Retriever 🔍
+Searches FAISS vector database for relevant chunks
+↓
+Agent 2 — Reasoner 🧠
+Analyses chunks, extracts key facts, rates confidence
+↓
+Agent 3 — Synthesizer ✍️
+Writes clear business recommendation
+↓
+Final Answer 💡
 
 
 ## 🛠️ Tech stack
@@ -17,23 +30,26 @@ Ask any business question in plain English and get an AI-powered answer with bus
 
 ## 📁 Project structure
 
+    multi-agent-rag-system/
+    ├── agents/
+    │   ├── retriever_agent.py    ← Agent 1: searches vector DB
+    │   ├── reasoner_agent.py     ← Agent 2: analyses facts
+    │   └── synthesizer_agent.py  ← Agent 3: writes recommendations
+    ├── data/
+    │   ├── company_knowledge.txt ← knowledge base document
+    │   └── faiss_index/          ← vector database
+    ├── app.py                    ← Streamlit web interface
+    ├── main.py                   ← CLI pipeline runner
+    └── requirements.txt
 
 ## 🚀 How to run
+
 ```bash
-# Clone the repo
 git clone https://github.com/Sadhvika-Sunkara/multi-agent-rag-system.git
 cd multi-agent-rag-system
-
-# Install dependencies
 pip install -r requirements.txt
-
-# Add your OpenAI API key
 echo "OPENAI_API_KEY=your-key-here" > .env
-
-# Build knowledge base
 python agents/retriever_agent.py
-
-# Run the web app
 streamlit run app.py
 ```
 
