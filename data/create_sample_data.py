@@ -1,0 +1,33 @@
+# Create a sample business document for testing
+sample_text = """
+COMPANY KNOWLEDGE BASE - 2026
+
+SECTION 1: SALES PERFORMANCE
+Our company achieved $5.2M revenue in Q1 2026.
+Top performing region: NSW with $2.1M in sales.
+Product A generated 45% of total revenue.
+Customer retention rate improved to 87%.
+
+SECTION 2: HR POLICIES  
+Annual leave: 20 days per year.
+Work from home: 3 days per week allowed.
+Performance reviews: conducted every 6 months.
+Training budget: $2,000 per employee per year.
+
+SECTION 3: TECHNICAL INFRASTRUCTURE
+Primary cloud provider: Microsoft Azure.
+Database: PostgreSQL on Azure.
+Deployment: Docker containers on Kubernetes.
+Monitoring: Grafana and Prometheus.
+
+SECTION 4: PRODUCT ROADMAP
+Q2 2026: Launch mobile app version 2.0
+Q3 2026: Expand to New Zealand market
+Q4 2026: Integrate AI-powered recommendations
+2027: IPO preparation begins
+"""
+
+with open('data/company_knowledge.txt', 'w') as f:
+    f.write(sample_text)
+
+print("✅ Sample data created!")

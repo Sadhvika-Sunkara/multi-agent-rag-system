@@ -1,0 +1,12 @@
+# Never push API keys to GitHub
+.env
+
+# Virtual environment
+venv/s
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
